@@ -27,16 +27,14 @@ body <- dashboardBody(
                     status = "success",
                     solidHeader = TRUE,
                     width = "100%",
-                    height = "800px",
-                    ggiraphOutput("plot", width = "100%"))
-              ),
+                    ggiraphOutput("plot", width = "100%"))),
               column(
                 width = 4,
-                valueBoxOutput("nrofitemswithmetrics", width = "100%"),
-                valueBoxOutput("maxaltmetrics", width = "100%"),
-                valueBoxOutput("maxvideo", width = "100%"),
-                valueBoxOutput("maxtwitter", width = "100%"),
-                valueBoxOutput("maxcites", width = "100%"))
+                valueBoxOutput("nrofitemswithmetrics", width = NULL),
+                valueBoxOutput("maxaltmetrics", width = NULL),
+                valueBoxOutput("maxvideo", width = NULL),
+                valueBoxOutput("maxtwitter", width = NULL),
+                valueBoxOutput("maxcites", width = NULL))
             ),
             fluidRow(
               column(
@@ -62,7 +60,6 @@ body <- dashboardBody(
                   status = "info",
                   solidHeader = TRUE,
                   width = 12,
-                  height = "600px",
                   DT::dataTableOutput("datatable", 
                                       height = "600px"))
               )
