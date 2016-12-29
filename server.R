@@ -3,9 +3,9 @@ function(input, output, session) {
   selectedSchoolData <- reactive({
     
     if ( input$school == 'All' ) 
-      return(dataForCharts)
+      return(data)
 
-     dataForCharts %>%
+     data %>%
         filter(School %in% input$school) 
   })
   
@@ -85,7 +85,7 @@ function(input, output, session) {
    sel_df <- selectedSchoolData()
    
    out <- sel_df[sel_df$Title %in% selected_state(), 
-                 c("Link", "Title", "School", "Journal", "Altmetric")]
+                 c("Link", "Year", "Title", "School", "Journal", "Altmetric", "Cites")]
    
    if( nrow(out) < 1 ) return(NULL)
    row.names(out) <- NULL
