@@ -18,7 +18,7 @@ data$Title[data$Title == "Long-term sea-level rise implied by 1.5[thinsp][deg]C 
 data$Title[data$Title == "Early Prediction of Movie Box Office Success based on Wikipedia Activity\n  Big Data"] <- "Early Prediction of Movie Box Office Success based on Wikipedia Activity Big Data"
 
 data <- data %>% 
-  mutate(Link = paste0("<a href='", Altmetric_URL, "'>", substr(Altmetric_URL, 47, nchar(Altmetric_URL)), '</a>'))
+  mutate(Link = paste0("<a href='", Altmetric_URL, "' target='_blank'>", substr(Altmetric_URL, 47, nchar(Altmetric_URL)), '</a>'))
 
 # Reorder columns
 data <- data[ ,c(ncol(data),1:ncol(data)-1)]
