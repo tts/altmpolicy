@@ -14,6 +14,8 @@ names(dataForCharts) <- c("Altmetric_URL", "Journal", "Title", "Altmetric", "Men
                           "ResearchForums", "NewsOutlets", "Policy", "Year", "Cites", "School")
 
 dataForCharts$Title <- dataForCharts$Title <- gsub("'","", dataForCharts$Title)
+dataForCharts$Title[dataForCharts$Title == "Long-term sea-level rise implied by 1.5[thinsp][deg]C and 2[thinsp][deg]C warming levels"] <- "Long-term sea-level rise implied by 1.5C and 2C warming levels"
+dataForCharts$Title[dataForCharts$Title == "Early Prediction of Movie Box Office Success based on Wikipedia Activity\n  Big Data"] <- "Early Prediction of Movie Box Office Success based on Wikipedia Activity Big Data"
 
 dataForCharts <- dataForCharts %>% 
   mutate(Link = paste0("<a href='", Altmetric_URL, "'>", substr(Altmetric_URL, 47, nchar(Altmetric_URL)), '</a>'))
