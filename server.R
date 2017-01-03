@@ -54,8 +54,8 @@ function(input, output, session) {
                              data_id = df$Title,
                              tooltip = df$Title)) + 
       labs(color=legend_title) +
-      scale_x_continuous(trans="log10") +
-      scale_y_continuous(trans="log10") +
+    #  scale_x_continuous(trans="log10") +
+    #  scale_y_continuous(trans="log10") +
       geom_point_interactive(alpha = 0.5, na.rm = TRUE) +
       scale_size(guide = "none")
     
