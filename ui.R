@@ -21,6 +21,7 @@ sidebar <- dashboardSidebar(
                 selected = "identity"),
     HTML("<div class='form-group shiny-input-container'><p><a href='http://www.altmetric.com'>Altmetric</a> data and WoS cites 2016-12-12. Altmetric API search based on DOI</p></div>"),
     HTML("<div class='form-group shiny-input-container'><p>The bigger the circle, the more citing policy documents</p></div>"),
+    HTML("<div class='form-group shiny-input-container'><p>No data from Schools ARTS and ELEC</p></div>"),
     HTML("<div class='form-group shiny-input-container'><p>R source code of <a href='https://github.com/tts/altmpolicy'>this app</a></p></div>")
   ), width = 150
 )
