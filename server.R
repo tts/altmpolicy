@@ -39,10 +39,10 @@ function(input, output, session) {
     xc <- as.name(input$xc)
     yc <- as.name(input$yc)
     
-    df <- selectedSchoolData()
+    scx <- as.name(input$scx)
+    scy <- as.name(input$scy)
     
-    # max_y <- max(df$xc)
-    # max_x <- max(df$yc)
+    df <- selectedSchoolData()
     
     legend_title <- "School"
     
@@ -54,8 +54,8 @@ function(input, output, session) {
                              data_id = df$Title,
                              tooltip = df$Title)) + 
       labs(color=legend_title) +
-    #  scale_x_continuous(trans="log10") +
-    #  scale_y_continuous(trans="log10") +
+      scale_x_continuous(trans=scx) +
+      scale_y_continuous(trans=scy) +
       geom_point_interactive(alpha = 0.5, na.rm = TRUE) +
       scale_size(guide = "none")
     
