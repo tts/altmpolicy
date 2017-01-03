@@ -85,7 +85,7 @@ function(input, output, session) {
    sel_df <- selectedSchoolData()
    
    out <- sel_df[sel_df$Title %in% selected_state(), 
-                 c("Link", "Year", "Title", "School", "Journal", "Altmetric", "Cites")]
+                 c("Link", "Year", "Title", "School", "Journal", "Score", "Cites")]
    
    if( nrow(out) < 1 ) return(NULL)
    row.names(out) <- NULL
@@ -106,10 +106,10 @@ function(input, output, session) {
   output$maxaltmetrics <- renderValueBox({
     valueBox(
       "Top Altmetric score", 
-      max(selectedSchoolData()$Altmetric), 
+      max(selectedSchoolData()$Score), 
       icon = icon("spinner"),
       color = "green",
-      href = selectedSchoolData()[selectedSchoolData()$Altmetric == max(selectedSchoolData()$Altmetric), "Altmetric_URL"][1]
+      href = selectedSchoolData()[selectedSchoolData()$Score == max(selectedSchoolData()$Score), "Altmetric_URL"][1]
     )
   })
   
