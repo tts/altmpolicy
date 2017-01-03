@@ -7,10 +7,13 @@ library(ggplot2)
 
 data <- read.table(file = "metrics.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
 
-names(data) <- c("Altmetric_URL", "Journal", "Title", "Altmetric", "Mendeley", "CiteULike", 
+names(data) <- c("Altmetric_URL", "Journal", "Title", "Score", "Mendeley", "CiteULike", 
                           "Readers", "GPlus", "Facebook", "Posts", "Twitter",
                           "Accounts", "Feeds", "YouTube", "Reddit", 
                           "ResearchForums", "NewsOutlets", "Policy", "Year", "Cites", "School")
+
+# URL, Year, Title, Journal, School, Cites, Policy, the rest
+data <- data[,c(1,19,3,2,21,20,18,4:17)]
 
 # Bad data
 data$Title <- data$Title <- gsub("'","", data$Title)
@@ -23,7 +26,7 @@ data <- data %>%
 # Reorder columns
 data <- data[ ,c(ncol(data),1:ncol(data)-1)]
 
-metrics_select <- sort(c("Altmetric", "Mendeley", "Twitter", "Facebook", "GPlus", "CiteULike", "Readers", "Posts", "Accounts", "Cites", "Feeds",
+metrics_select <- sort(c("Score", "Mendeley", "Twitter", "Facebook", "GPlus", "CiteULike", "Readers", "Posts", "Accounts", "Cites", "Feeds",
              "YouTube", "Reddit", "NewsOutlets", "ResearchForums", "Policy"))
 
 # No data for ARTS and ELEC
