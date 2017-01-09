@@ -1,5 +1,6 @@
 function(input, output, session) {
   
+  
   selectedSchoolData <- reactive({
     
     if ( input$school == 'All' ) 

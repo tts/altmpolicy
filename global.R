@@ -34,3 +34,7 @@ schools <- c("BIZ", "CHEM", "ENG", "SCI")
 
 tooltip_css <- "background-color:WhiteSmoke;width:300px;border-style:dotted;font-style:italic;padding:3px;"
 
+# Bookmarking not implemented yet at shinyapps.io
+# https://groups.google.com/d/msg/shinyapps-users/IQL4QjQOcHI/GHsQ2HtgAQAJ
+#
+# enableBookmarking(store = "url")

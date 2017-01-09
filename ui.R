@@ -23,6 +23,7 @@ sidebar <- dashboardSidebar(
     HTML("<div class='form-group shiny-input-container'><p>The bigger the circle, the more citing policy documents</p></div>"),
     HTML("<div class='form-group shiny-input-container'><p>No data from Schools ARTS and ELEC</p></div>"),
     HTML("<div class='form-group shiny-input-container'><p>R source code of <a href='https://github.com/tts/altmpolicy'>this app</a></p></div>")
+   # div(bookmarkButton(id="bm1"), class='form-group shiny-input-container')
   ), width = 150
 )
 
@@ -80,11 +81,23 @@ body <- dashboardBody(
   ))
 
 
-dashboardPage(
-  dashboardHeader(title = "Aalto University publications 2007-2015 with altmetrics from policy documents",
-                  titleWidth = "700"),
-  sidebar,
-  body,
-  skin = "black"
-)
+  dashboardPage(
+    dashboardHeader(title = "Aalto University publications 2007-2015 with altmetrics from policy documents",
+                    titleWidth = "700"),
+    sidebar,
+    body,
+    skin = "black"
+  )
+
+# Bookmarking not implemented yet at shinyapps.io
+# https://groups.google.com/d/msg/shinyapps-users/IQL4QjQOcHI/GHsQ2HtgAQAJ
+#
+# function(request) {
+#   dashboardPage(
+#     dashboardHeader(title = "Aalto University publications 2007-2015 with altmetrics from policy documents",
+#                     titleWidth = "700"),
+#     sidebar,
+#     body,
+#     skin = "black"
+#   )}
 
